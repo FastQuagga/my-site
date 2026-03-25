@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>BBParma-Storybook-v16-PRINT</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --surface: #f3f0e8;
+        --surface-raised: rgba(255, 255, 255, 0.86);
+        --paper: #fffdf7;
+        --ink: #1f2937;
+        --ink-muted: #6b7280;
+        --line: rgba(31, 41, 55, 0.12);
+        --accent: #c2410c;
+        --doc-width: min(920px, calc(100vw - 28px));
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          radial-gradient(circle at top right, rgba(194, 65, 12, 0.12), transparent 24%),
+          linear-gradient(180deg, #f7f2e8 0%, #efe7d8 100%);
+        color: var(--ink);
+        font-family: "IBM Plex Sans", "Segoe UI", sans-serif;
+      }
+
+      .reader-shell {
+        min-height: 100vh;
+      }
+
+      .reader-shell--clean {
+        background: white;
+      }
+
+      .reader-hero {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        border-bottom: 1px solid var(--line);
+        background: rgba(247, 242, 232, 0.88);
+        backdrop-filter: blur(18px);
+      }
+
+      .reader-hero__inner {
+        width: var(--doc-width);
+        margin: 0 auto;
+        padding: 18px 0 16px;
+      }
+
+      .reader-eyebrow {
+        color: var(--accent);
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .reader-title {
+        margin: 10px 0 8px;
+        font-size: clamp(26px, 4vw, 42px);
+        line-height: 1;
+      }
+
+      .reader-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        color: var(--ink-muted);
+        font-size: 14px;
+      }
+
+      .reader-stack {
+        width: var(--doc-width);
+        margin: 0 auto;
+        padding: 24px 0 56px;
+      }
+
+      .reader-stack--clean {
+        width: min(1120px, 100vw);
+        padding: 0;
+      }
+
+      .reader-card {
+        margin-bottom: 22px;
+        border: 1px solid var(--line);
+        border-radius: 22px;
+        overflow: hidden;
+        background: var(--paper);
+        box-shadow: 0 24px 60px rgba(31, 41, 55, 0.08);
+      }
+
+      .reader-card--clean {
+        margin-bottom: 0;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+      }
+
+      .reader-card__meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink-muted);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .reader-card img {
+        display: block;
+        width: 100%;
+        height: auto;
+        background: white;
+      }
+
+      .reader-sentinel--clean {
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+      }
+
+      .reader-empty,
+      .reader-finished {
+        padding: 28px 18px;
+        text-align: center;
+        color: var(--ink-muted);
+      }
+
+      @media (max-width: 720px) {
+        .reader-card__meta {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reader-shell reader-shell--clean">
+      
+      <main class="reader-stack reader-stack--clean">
+        <div id="reader-list"></div>
+        <div id="reader-sentinel" class="reader-sentinel--clean"></div>
+      </main>
+    </div>
+
+    <script id="reader-data" type="application/json">{
+  "title": "BBParma-Storybook-v16-PRINT",
+  "sourceFilename": "BBParma-Storybook-v16-PRINT.pdf",
+  "totalPages": 104,
+  "totalBlocks": 20,
+  "cleanHtml": true,
+  "generatedAt": "2026-03-25T19:48:43.708Z",
+  "blocks": [
+    {
+      "id": "block-0001",
+      "sequence": 1,
+      "pageNumber": 1,
+      "region": "primary",
+      "label": "Page 1 primary",
+      "width": 457,
+      "height": 1012,
+      "src": "assets/block-0001.png"
+    },
+    {
+      "id": "block-0002",
+      "sequence": 2,
+      "pageNumber": 1,
+      "region": "secondary",
+      "label": "Page 1 secondary",
+      "width": 457,
+      "height": 993,
+      "src": "assets/block-0002.png"
+    },
+    {
+      "id": "block-0003",
+      "sequence": 3,
+      "pageNumber": 2,
+      "region": "primary",
+      "label": "Page 2 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0003.png"
+    },
+    {
+      "id": "block-0004",
+      "sequence": 4,
+      "pageNumber": 2,
+      "region": "secondary",
+      "label": "Page 2 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0004.png"
+    },
+    {
+      "id": "block-0005",
+      "sequence": 5,
+      "pageNumber": 3,
+      "region": "primary",
+      "label": "Page 3 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0005.png"
+    },
+    {
+      "id": "block-0006",
+      "sequence": 6,
+      "pageNumber": 3,
+      "region": "secondary",
+      "label": "Page 3 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0006.png"
+    },
+    {
+      "id": "block-0007",
+      "sequence": 7,
+      "pageNumber": 4,
+      "region": "primary",
+      "label": "Page 4 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0007.png"
+    },
+    {
+      "id": "block-0008",
+      "sequence": 8,
+      "pageNumber": 4,
+      "region": "secondary",
+      "label": "Page 4 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0008.png"
+    },
+    {
+      "id": "block-0009",
+      "sequence": 9,
+      "pageNumber": 5,
+      "region": "primary",
+      "label": "Page 5 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0009.png"
+    },
+    {
+      "id": "block-0010",
+      "sequence": 10,
+      "pageNumber": 5,
+      "region": "secondary",
+      "label": "Page 5 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0010.png"
+    },
+    {
+      "id": "block-0011",
+      "sequence": 11,
+      "pageNumber": 6,
+      "region": "primary",
+      "label": "Page 6 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0011.png"
+    },
+    {
+      "id": "block-0012",
+      "sequence": 12,
+      "pageNumber": 6,
+      "region": "secondary",
+      "label": "Page 6 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0012.png"
+    },
+    {
+      "id": "block-0013",
+      "sequence": 13,
+      "pageNumber": 7,
+      "region": "primary",
+      "label": "Page 7 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0013.png"
+    },
+    {
+      "id": "block-0014",
+      "sequence": 14,
+      "pageNumber": 7,
+      "region": "secondary",
+      "label": "Page 7 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0014.png"
+    },
+    {
+      "id": "block-0015",
+      "sequence": 15,
+      "pageNumber": 8,
+      "region": "primary",
+      "label": "Page 8 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0015.png"
+    },
+    {
+      "id": "block-0016",
+      "sequence": 16,
+      "pageNumber": 8,
+      "region": "secondary",
+      "label": "Page 8 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0016.png"
+    },
+    {
+      "id": "block-0017",
+      "sequence": 17,
+      "pageNumber": 9,
+      "region": "primary",
+      "label": "Page 9 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0017.png"
+    },
+    {
+      "id": "block-0018",
+      "sequence": 18,
+      "pageNumber": 9,
+      "region": "secondary",
+      "label": "Page 9 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0018.png"
+    },
+    {
+      "id": "block-0019",
+      "sequence": 19,
+      "pageNumber": 10,
+      "region": "primary",
+      "label": "Page 10 primary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0019.png"
+    },
+    {
+      "id": "block-0020",
+      "sequence": 20,
+      "pageNumber": 10,
+      "region": "secondary",
+      "label": "Page 10 secondary",
+      "width": 457,
+      "height": 1263,
+      "src": "assets/block-0020.png"
+    }
+  ]
+}</script>
+    <script>
+      const data = JSON.parse(document.getElementById("reader-data").textContent);
+      const list = document.getElementById("reader-list");
+      const sentinel = document.getElementById("reader-sentinel");
+      const batchSize = 12;
+      let rendered = 0;
+
+      function renderNextBatch() {
+        const nextBlocks = data.blocks.slice(rendered, rendered + batchSize);
+        if (!nextBlocks.length) {
+          if (data.cleanHtml) {
+            sentinel.hidden = true;
+          } else {
+            sentinel.textContent = "Документ загружен целиком.";
+            sentinel.className = "reader-finished";
+          }
+          return false;
+        }
+
+        for (const block of nextBlocks) {
+          const card = document.createElement(data.cleanHtml ? "div" : "article");
+          card.className = data.cleanHtml ? "reader-card reader-card--clean" : "reader-card";
+
+          const image = document.createElement("img");
+          image.loading = "lazy";
+          image.alt = block.label;
+          image.src = block.src;
+          image.width = block.width;
+          image.height = block.height;
+
+          if (!data.cleanHtml) {
+            const meta = document.createElement("div");
+            meta.className = "reader-card__meta";
+            meta.innerHTML =
+              "<span>Block " + String(block.sequence).padStart(3, "0") + "</span>" +
+              "<span>Page " + block.pageNumber + " · " + (block.region === "primary" ? "Region 1" : "Region 2") + "</span>";
+            card.appendChild(meta);
+          }
+
+          card.appendChild(image);
+          list.appendChild(card);
+        }
+
+        rendered += nextBlocks.length;
+        return true;
+      }
+
+      renderNextBatch();
+
+      const observer = new IntersectionObserver((entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            const hasMore = renderNextBatch();
+            if (!hasMore) {
+              observer.disconnect();
+            }
+          }
+        }
+      }, { rootMargin: "900px 0px 900px 0px" });
+
+      observer.observe(sentinel);
+    </script>
+  </body>
+</html>
